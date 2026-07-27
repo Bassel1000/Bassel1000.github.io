@@ -160,14 +160,14 @@ export const projects: Project[] = [
     language: "Python",
   },
   {
-    name: "NexaPlay",
-    tagline: "Game launcher & store",
+    name: "Ankhvault",
+    tagline: "Desktop gaming launcher & store",
     description:
-      "A Steam/Epic-style gaming launcher and store built in Java — browse, launch, and manage a game library from one desktop app.",
-    tags: ["Java", "Desktop App"],
-    repo: "https://github.com/Bassel1000/NexaPlay",
+      "A next-generation desktop gaming launcher and store built with Rust, Tauri 2.0, and React CSS Glassmorphism — featuring AES-256 binary database encryption, x402 Web3 payment protocol, and 95% developer revenue split.",
+    tags: ["Rust", "Tauri 2.0", "React", "Desktop App"],
+    repo: "https://github.com/Duat-Studio/Ankhvault",
     category: "Software",
-    language: "Java",
+    language: "Rust",
   },
 ];
 
