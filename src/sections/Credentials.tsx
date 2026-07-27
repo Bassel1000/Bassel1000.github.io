@@ -104,17 +104,27 @@ export function Credentials() {
               </div>
               <div>
                 <h3 className="font-display font-semibold text-slate-100">Certifications</h3>
-                <p className="text-xs text-slate-500">A selection — 25+ in total, all verified on Credly</p>
+                <p className="text-xs text-slate-500">A selection — 25+ in total, verified on Credly & LinkedIn</p>
               </div>
             </div>
-            <a
-              href={links.credly}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
-            >
-              View all on Credly <ArrowUpRight size={15} />
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href={links.credly}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
+              >
+                Credly <ArrowUpRight size={15} />
+              </a>
+              <a
+                href={links.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
+              >
+                LinkedIn <ArrowUpRight size={15} />
+              </a>
+            </div>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             {certifications.map((c) => (
