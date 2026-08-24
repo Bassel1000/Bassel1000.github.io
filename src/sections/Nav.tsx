@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { links } from "@/data/content";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import phoenixFireImg from "@/assets/phoenix_logo_fire.png";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -34,69 +33,53 @@ export function Nav() {
       }`}
     >
       <nav className="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between">
-        {/* Top-Left Brand Logo & Name */}
+        {/* Top-Left Brand Logo & Name (Option B: Metallic Glass Monogram) */}
         <a
           href="#top"
           onMouseEnter={() => setIsLogoHovered(true)}
           onMouseLeave={() => setIsLogoHovered(false)}
           className="flex items-center gap-3 group select-none py-1"
         >
-          {/* Phoenix Micro-Emblem Badge */}
+          {/* BE Monogram Squircle Badge with Shimmer Sweep */}
           <div className="relative w-9 h-9 flex items-center justify-center">
-            {/* Ambient Flame Ring Aura */}
+            {/* Ambient Gold Glow Aura */}
             <motion.div
               animate={{
-                scale: isLogoHovered ? [1.1, 1.25, 1.1] : [1, 1.08, 1],
-                opacity: isLogoHovered ? [0.7, 0.9, 0.7] : [0.35, 0.5, 0.35],
-                rotate: isLogoHovered ? [0, 180, 360] : [0, 45, 0],
+                scale: isLogoHovered ? [1.1, 1.25, 1.1] : [1, 1.06, 1],
+                opacity: isLogoHovered ? [0.75, 0.95, 0.75] : [0.3, 0.45, 0.3],
               }}
               transition={{
                 repeat: Infinity,
-                duration: isLogoHovered ? 2.5 : 5,
+                duration: isLogoHovered ? 2 : 4,
                 ease: "easeInOut",
               }}
-              className="absolute -inset-1 rounded-xl bg-gradient-to-tr from-orange-600 via-amber-500 to-yellow-400 blur-sm pointer-events-none"
+              className="absolute -inset-1 rounded-xl bg-gradient-to-tr from-amber-500 via-yellow-400 to-orange-500 blur-sm pointer-events-none"
             />
 
-            {/* Emblem Container */}
-            <div className="relative w-full h-full rounded-xl bg-gradient-to-br from-white to-amber-50 dark:from-[#0f172a] dark:to-[#070b14] border border-amber-400/50 dark:border-amber-500/40 p-1 flex items-center justify-center shadow-md shadow-orange-500/10 overflow-hidden">
-              <motion.img
-                src={phoenixFireImg}
-                alt="Phoenix Mark"
-                className="w-6 h-6 object-contain"
+            {/* Glass Badge Container */}
+            <div className="relative w-full h-full rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-amber-400/50 dark:border-amber-500/40 flex items-center justify-center shadow-md shadow-amber-500/10 overflow-hidden group-hover:border-amber-400 transition-colors">
+              {/* Shimmer Light Reflection Sweep */}
+              <motion.div
                 animate={{
-                  scale: isLogoHovered ? 1.12 : 1,
-                  y: isLogoHovered ? -0.5 : 0,
+                  x: isLogoHovered ? ["-100%", "200%"] : ["-100%", "200%"],
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                style={{
-                  filter: isLogoHovered
-                    ? "drop-shadow(0 0 6px rgba(251, 191, 36, 0.9)) drop-shadow(0 0 12px rgba(249, 115, 22, 0.7))"
-                    : "drop-shadow(0 0 4px rgba(251, 191, 36, 0.6))",
+                transition={{
+                  repeat: Infinity,
+                  duration: isLogoHovered ? 1.2 : 3.5,
+                  ease: "easeInOut",
+                  repeatDelay: isLogoHovered ? 0.3 : 2,
                 }}
+                className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 dark:via-white/20 to-transparent -skew-x-12 pointer-events-none"
               />
 
-              {/* Rising Sparks on Hover */}
-              {isLogoHovered && (
-                <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                  <motion.span
-                    initial={{ y: 8, opacity: 0 }}
-                    animate={{ y: -16, opacity: [0, 1, 0] }}
-                    transition={{ repeat: Infinity, duration: 0.9, ease: "easeOut" }}
-                    className="absolute left-1.5 bottom-0 w-1 h-1 rounded-full bg-amber-400 shadow-[0_0_4px_#fbbf24]"
-                  />
-                  <motion.span
-                    initial={{ y: 8, opacity: 0 }}
-                    animate={{ y: -18, opacity: [0, 1, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.1, delay: 0.25, ease: "easeOut" }}
-                    className="absolute right-1.5 bottom-0 w-1 h-1 rounded-full bg-orange-400 shadow-[0_0_4px_#f97316]"
-                  />
-                </div>
-              )}
+              {/* BE Monogram Typography */}
+              <span className="font-display font-black text-sm tracking-tighter bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 dark:from-amber-300 dark:via-amber-400 dark:to-orange-500 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-200">
+                BE
+              </span>
             </div>
           </div>
 
-          {/* Name & Micro Subtitle */}
+          {/* Name & Title */}
           <div className="flex flex-col">
             <span className="font-display text-[15px] font-bold tracking-tight text-slate-900 dark:text-slate-100 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors leading-tight">
               Bassel Elbahnasy

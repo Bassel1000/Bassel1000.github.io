@@ -3,7 +3,6 @@ import { Github, Linkedin, Mail, Copy, Check, ArrowUpRight } from "lucide-react"
 import { useState, type ComponentType } from "react";
 import { links, emails } from "@/data/content";
 import { KaggleIcon, CredlyIcon, UpworkIcon } from "@/components/BrandIcons";
-import phoenixFireImg from "@/assets/phoenix_logo_fire.png";
 
 const profiles: { name: string; handle: string; href: string; icon: ComponentType<{ size?: number }>; color: string }[] = [
   { name: "GitHub", handle: "@Bassel1000", href: links.github, icon: Github, color: "hover:border-slate-400/70" },
@@ -120,8 +119,10 @@ export function Contact() {
       <footer className="relative mt-20 border-t border-slate-200 dark:border-slate-800/70">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-white to-amber-50 dark:from-[#0f172a] dark:to-[#070b14] border border-amber-400/50 dark:border-amber-500/40 flex items-center justify-center p-0.5 shadow-sm shadow-orange-500/10">
-              <img src={phoenixFireImg} alt="Phoenix" className="w-5 h-5 object-contain" />
+            <div className="w-7 h-7 rounded-lg bg-white/90 dark:bg-slate-900/90 border border-amber-400/50 dark:border-amber-500/40 flex items-center justify-center shadow-sm shadow-amber-500/10">
+              <span className="font-display font-black text-xs bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 dark:from-amber-300 dark:via-amber-400 dark:to-orange-500 bg-clip-text text-transparent">
+                BE
+              </span>
             </div>
             <span className="text-sm text-slate-500 dark:text-slate-400 font-medium">
               © {new Date().getFullYear()} Bassel Elbahnasy · Built with React & Tailwind
