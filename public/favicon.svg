@@ -1,31 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <defs>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fef08a" />
-      <stop offset="30%" stop-color="#fbbf24" />
-      <stop offset="70%" stop-color="#f59e0b" />
-      <stop offset="100%" stop-color="#ea580c" />
-    </linearGradient>
-    <linearGradient id="goldGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fbbf24" />
-      <stop offset="50%" stop-color="#d97706" />
+    <!-- Royal Gold Gradients -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="25%" stop-color="#fde047" />
+      <stop offset="60%" stop-color="#f59e0b" />
       <stop offset="100%" stop-color="#b45309" />
     </linearGradient>
+    <linearGradient id="goldGleam" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <!-- Royal Lapis / Obsidian Stripes -->
+    <linearGradient id="lapis" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <!-- Backgrounds -->
     <linearGradient id="bgDark" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#070b14" />
+      <stop offset="100%" stop-color="#050811" />
     </linearGradient>
     <linearGradient id="bgLight" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffffff" />
       <stop offset="100%" stop-color="#f8fafc" />
     </linearGradient>
+    <!-- Border -->
     <linearGradient id="borderDark" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#f97316" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.4" />
     </linearGradient>
     <linearGradient id="borderLight" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#d97706" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#b45309" stop-opacity="0.5" />
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur" />
@@ -33,10 +41,8 @@
     </filter>
     <style>
       .bg-rect { fill: url(#bgDark); stroke: url(#borderDark); stroke-width: 3.5; }
-      .mono-text { fill: url(#goldGrad); }
       @media (prefers-color-scheme: light) {
         .bg-rect { fill: url(#bgLight); stroke: url(#borderLight); stroke-width: 3.5; }
-        .mono-text { fill: url(#goldGradLight); }
       }
     </style>
   </defs>
@@ -44,16 +50,68 @@
   <!-- Squircle Base -->
   <rect class="bg-rect" x="5" y="5" width="118" height="118" rx="28" />
 
-  <!-- Ambient Glow Behind Monogram -->
-  <circle cx="64" cy="64" r="32" fill="#fbbf24" opacity="0.18" filter="url(#glow)" />
+  <!-- Ambient Golden Aura -->
+  <circle cx="64" cy="62" r="32" fill="#fbbf24" opacity="0.16" filter="url(#glow)" />
 
-  <!-- Stylized Geometric "BE" Monogram -->
-  <g transform="translate(18, 20)">
-    <!-- B Glyph -->
-    <path class="mono-text" d="M12 12 L44 12 C56 12 64 19 64 29 C64 36 59 41 52 44 C61 47 67 54 67 65 C67 77 57 84 44 84 L12 84 Z M26 25 L26 41 L41 41 C46 41 50 38 50 33 C50 28 46 25 41 25 Z M26 53 L26 71 L43 71 C48 71 53 67 53 62 C53 57 48 53 43 53 Z" />
-    <!-- E Accent Bar Interlock -->
-    <path class="mono-text" d="M56 12 L84 12 L84 24 L66 24 L66 41 L80 41 L80 53 L66 53 L66 72 L84 72 L84 84 L56 84 Z" opacity="0.95" />
-    <!-- Micro Angular Cut Accents -->
-    <polygon points="76,8 84,0 88,4 80,12" fill="#fef08a" opacity="0.8" />
+  <!-- PHARAOH NEMES HEADDRESS -->
+  <g id="nemes-pharaoh" transform="translate(0, 1)">
+    <!-- 1. Outer Nemes Headdress Base Shape -->
+    <path d="M64 14 C46 14, 30 22, 22 38 C18 47, 18 58, 20 68 C22 76, 26 84, 32 103 C34 107, 40 106, 42 101 C44 94, 46 86, 48 78 L80 78 C82 86, 84 94, 86 101 C88 106, 94 107, 96 103 C102 84, 106 76, 108 68 C110 58, 110 47, 106 38 C98 22, 82 14, 64 14 Z" fill="url(#gold)" />
+
+    <!-- 2. Distinctive Nemes Alternating Horizontal Stripes (Lapis / Dark Folds) -->
+    <!-- Stripe 1 (Top crown) -->
+    <path d="M42 22 Q64 18 86 22 L83 27 Q64 24 45 27 Z" fill="url(#lapis)" />
+    <!-- Stripe 2 -->
+    <path d="M33 32 Q64 26 95 32 L92 37 Q64 32 36 37 Z" fill="url(#lapis)" />
+    <!-- Stripe 3 -->
+    <path d="M26 43 Q64 37 102 43 L99 48 Q64 43 29 48 Z" fill="url(#lapis)" />
+    <!-- Stripe 4 (Eye level) -->
+    <path d="M22 54 Q44 50 48 50 L48 55 Q42 55 24 59 Z" fill="url(#lapis)" />
+    <path d="M106 54 Q84 50 80 50 L80 55 Q86 55 104 59 Z" fill="url(#lapis)" />
+    <!-- Stripe 5 (Lower side folds) -->
+    <path d="M22 65 Q38 62 48 64 L48 69 Q36 68 25 71 Z" fill="url(#lapis)" />
+    <path d="M106 65 Q90 62 80 64 L80 69 Q92 68 103 71 Z" fill="url(#lapis)" />
+    <!-- Lappet stripes (Left) -->
+    <path d="M27 78 L47 76 L46 81 L29 83 Z" fill="url(#lapis)" />
+    <path d="M30 89 L44 87 L43 92 L32 94 Z" fill="url(#lapis)" />
+    <path d="M33 99 L41 97 L40 101 L35 102 Z" fill="url(#lapis)" />
+    <!-- Lappet stripes (Right) -->
+    <path d="M101 78 L81 76 L82 81 L99 83 Z" fill="url(#lapis)" />
+    <path d="M98 89 L84 87 L85 92 L96 94 Z" fill="url(#lapis)" />
+    <path d="M95 99 L87 97 L88 101 L93 102 Z" fill="url(#lapis)" />
+
+    <!-- 3. Forehead Diadem Band -->
+    <rect x="46" y="44" width="36" height="5" rx="1.5" fill="url(#goldGleam)" stroke="#b45309" stroke-width="0.75" />
+
+    <!-- 4. Royal Uraeus (Cobra Crest on Forehead) -->
+    <g transform="translate(64, 40)">
+      <path d="M0 -15 C-4 -12, -4 -6, -2 -2 C-1 1, 1 1, 2 -2 C4 -6, 4 -12, 0 -15 Z" fill="url(#goldGleam)" />
+      <path d="M0 -2 Q1 3 0 6" stroke="#ea580c" stroke-width="1.8" fill="none" stroke-linecap="round" />
+      <circle cx="0" cy="-11" r="1.5" fill="#ef4444" />
+    </g>
+
+    <!-- 5. Royal Pharaoh Face / Mask -->
+    <path d="M48 49 L80 49 L79 66 C79 76, 73 84, 64 87 C55 84, 49 76, 49 66 Z" fill="url(#goldGleam)" stroke="#b45309" stroke-width="0.75" />
+
+    <!-- 6. Stylized Kohl Eyes & Brows (Egyptian Eye of Horus Style) -->
+    <!-- Left Eye -->
+    <path d="M52 56 Q57 53 61 56 Q57 59 52 56 Z" fill="#0f172a" />
+    <circle cx="56.5" cy="56" r="1.2" fill="#ffffff" />
+    <path d="M51 52 Q56 50 61 53" stroke="#0f172a" stroke-width="1.2" fill="none" stroke-linecap="round" />
+    <!-- Right Eye -->
+    <path d="M67 56 Q71 53 76 56 Q71 59 67 56 Z" fill="#0f172a" />
+    <circle cx="71.5" cy="56" r="1.2" fill="#ffffff" />
+    <path d="M67 53 Q72 50 77 52" stroke="#0f172a" stroke-width="1.2" fill="none" stroke-linecap="round" />
+
+    <!-- Nose & Lips -->
+    <path d="M64 57 L63 67 L65 67 Z" fill="#d97706" />
+    <path d="M59 72 Q64 74 69 72" stroke="#b45309" stroke-width="1.2" fill="none" stroke-linecap="round" />
+
+    <!-- 7. Royal Ceremonial Beard -->
+    <path d="M60.5 86 L67.5 86 L66 109 C66 112, 62 112, 62 109 Z" fill="url(#goldGleam)" stroke="#b45309" stroke-width="0.75" />
+    <line x1="61" y1="91" x2="67" y2="91" stroke="#0f172a" stroke-width="1" />
+    <line x1="61.5" y1="96" x2="66.5" y2="96" stroke="#0f172a" stroke-width="1" />
+    <line x1="62" y1="101" x2="66" y2="101" stroke="#0f172a" stroke-width="1" />
+    <line x1="62.5" y1="106" x2="65.5" y2="106" stroke="#0f172a" stroke-width="1" />
   </g>
 </svg>
