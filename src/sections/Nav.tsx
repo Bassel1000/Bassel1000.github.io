@@ -42,8 +42,15 @@ export function Nav() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-slate-400 hover:text-amber-300 transition-colors"
+              className={`text-sm transition-colors ${
+                item.label === "Phoenix"
+                  ? "text-amber-400/90 hover:text-amber-300 font-medium flex items-center gap-1"
+                  : "text-slate-400 hover:text-amber-300"
+              }`}
             >
+              {item.label === "Phoenix" && (
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+              )}
               {item.label}
             </a>
           ))}

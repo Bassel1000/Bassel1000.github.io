@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Flame, Github, Eye, Navigation, ShieldCheck, Cpu, Radio, MonitorSmartphone } from "lucide-react";
+import { Github, Eye, Navigation, ShieldCheck, Cpu, Radio, MonitorSmartphone, Sparkles } from "lucide-react";
 import { phoenix } from "@/data/content";
+import { PhoenixFlameLogo } from "@/components/PhoenixFlameLogo";
 
 const highlightIcons = [Eye, Navigation, ShieldCheck, Radio, Cpu, MonitorSmartphone];
 
@@ -8,7 +9,8 @@ export function Phoenix() {
   return (
     <section id="phoenix" className="relative py-24 sm:py-32 overflow-hidden">
       {/* ambient fire glow */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[24rem] bg-gradient-to-b from-orange-600/10 via-amber-500/5 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[70rem] h-[32rem] bg-gradient-to-b from-orange-600/15 via-amber-500/10 to-transparent blur-3xl animate-flame-pulse" />
+      <div className="pointer-events-none absolute top-36 left-1/2 -translate-x-1/2 w-[45rem] h-[22rem] bg-gradient-to-r from-orange-500/10 via-red-500/10 to-amber-500/10 blur-2xl" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <motion.div
@@ -16,11 +18,19 @@ export function Phoenix() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-3xl mx-auto flex flex-col items-center"
         >
+          {/* Animated Phoenix Logo with Fire & Ember Particles */}
+          <div className="mb-4 relative flex flex-col items-center">
+            <PhoenixFlameLogo size="lg" interactive={true} showParticles={true} />
+            <div className="mt-1 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono2 text-amber-300 bg-amber-500/10 border border-amber-500/25 shadow-lg shadow-orange-500/5 backdrop-blur-sm">
+              <Sparkles size={12} className="text-amber-400 animate-pulse" />
+              Hover to ignite flame & sparks
+            </div>
+          </div>
+
           <p className="font-mono2 text-sm text-amber-400 tracking-widest uppercase mb-3">// Graduation project</p>
           <div className="flex items-center justify-center gap-3">
-            <Flame className="text-orange-500" size={34} />
             <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-slate-50">
               Meet <span className="text-gradient">Phoenix</span>
             </h2>
