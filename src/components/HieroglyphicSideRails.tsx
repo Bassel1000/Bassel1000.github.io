@@ -1,31 +1,8 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
-// Authentic Egyptian Hieroglyphs with their names and meanings
-const leftHieroglyphs = [
-  { char: "𓋹", name: "Ankh", meaning: "Life & Vitality" },
-  { char: "𓁹", name: "Wedjat", meaning: "Eye of Horus · Protection" },
-  { char: "𓆣", name: "Khepri", meaning: "Scarab · Creation & Evolution" },
-  { char: "𓇳", name: "Ra", meaning: "Sun Disc · Energy & Light" },
-  { char: "𓊽", name: "Djed", meaning: "Pillar of Stability" },
-  { char: "𓆃", name: "Horus Wings", meaning: "Elevation & Vision" },
-  { char: "𓏛", name: "Sesh", meaning: "Scroll · Knowledge & Data" },
-  { char: "𓍯", name: "Shen", meaning: "Eternity & Protection" },
-  { char: "𓎛", name: "Heh", meaning: "Infinity" },
-  { char: "𓄿", name: "Vulture", meaning: "Wisdom" },
-];
-
-const rightHieroglyphs = [
-  { char: "𓇳", name: "Aten", meaning: "Radiant Light" },
-  { char: "𓆃", name: "Nekhbet", meaning: "Ascension" },
-  { char: "𓊹", name: "Netjer", meaning: "Divine Spirit" },
-  { char: "𓋹", name: "Ankh", meaning: "Key of Life" },
-  { char: "𓌃", name: "Medu", meaning: "Sacred Code" },
-  { char: "𓏏", name: "Ta", meaning: "Earth & Foundations" },
-  { char: "𓁹", name: "Horus", meaning: "Clear Vision" },
-  { char: "𓊖", name: "Niwet", meaning: "Civilization & City" },
-  { char: "𓃭", name: "Mai", meaning: "Lion · Strength & Courage" },
-  { char: "𓆣", name: "Khepri", meaning: "Transformation" },
-];
+// Authentic Egyptian Hieroglyphs
+const leftHieroglyphs = ["𓋹", "𓁹", "𓆣", "𓇳", "𓊽", "𓆃", "𓏛", "𓍯", "𓎛", "𓄿"];
+const rightHieroglyphs = ["𓇳", "𓆃", "𓊹", "𓋹", "𓌃", "𓏏", "𓁹", "𓊖", "𓃭", "𓆣"];
 
 export function HieroglyphicSideRails() {
   const { scrollYProgress } = useScroll();
@@ -48,17 +25,15 @@ export function HieroglyphicSideRails() {
     >
       {/* LEFT RAIL */}
       <div className="absolute left-4 2xl:left-8 top-0 bottom-0 w-10 flex flex-col items-center justify-center">
-
         <motion.div
           style={{ y: yLeft }}
           className="flex flex-col items-center gap-10 py-20 pointer-events-auto"
         >
-          {leftHieroglyphs.map((glyph, idx) => (
+          {leftHieroglyphs.map((char, idx) => (
             <motion.div
-              key={`left-${idx}-${glyph.char}`}
+              key={`left-${idx}-${char}`}
               whileHover={{ scale: 1.35, rotate: [0, -5, 5, 0] }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              title={`${glyph.name} — ${glyph.meaning}`}
               className="group relative flex items-center justify-center cursor-default"
             >
               {/* Subtle hover glow ring */}
@@ -68,15 +43,10 @@ export function HieroglyphicSideRails() {
                 style={{
                   fontFamily: "'Segoe UI Historic', 'Noto Sans Egyptian Hieroglyphs', serif",
                 }}
-                className="text-2xl 2xl:text-3xl text-amber-500/30 dark:text-amber-400/25 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(251,191,36,0.7)]"
+                className="text-2xl 2xl:text-3xl text-amber-500/30 dark:text-amber-400/25 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(251,191,36,0.8)]"
               >
-                {glyph.char}
+                {char}
               </span>
-
-              {/* Tooltip on hover */}
-              <div className="absolute left-full ml-3 px-2 py-1 rounded bg-slate-900/90 dark:bg-slate-800/95 border border-amber-500/30 text-[11px] font-mono2 text-amber-300 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg z-50">
-                <span className="font-semibold">{glyph.name}</span> · {glyph.meaning}
-              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -84,17 +54,15 @@ export function HieroglyphicSideRails() {
 
       {/* RIGHT RAIL */}
       <div className="absolute right-4 2xl:right-8 top-0 bottom-0 w-10 flex flex-col items-center justify-center">
-
         <motion.div
           style={{ y: yRight }}
           className="flex flex-col items-center gap-10 py-20 pointer-events-auto"
         >
-          {rightHieroglyphs.map((glyph, idx) => (
+          {rightHieroglyphs.map((char, idx) => (
             <motion.div
-              key={`right-${idx}-${glyph.char}`}
+              key={`right-${idx}-${char}`}
               whileHover={{ scale: 1.35, rotate: [0, 5, -5, 0] }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              title={`${glyph.name} — ${glyph.meaning}`}
               className="group relative flex items-center justify-center cursor-default"
             >
               {/* Subtle hover glow ring */}
@@ -104,15 +72,10 @@ export function HieroglyphicSideRails() {
                 style={{
                   fontFamily: "'Segoe UI Historic', 'Noto Sans Egyptian Hieroglyphs', serif",
                 }}
-                className="text-2xl 2xl:text-3xl text-amber-500/30 dark:text-amber-400/25 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(251,191,36,0.7)]"
+                className="text-2xl 2xl:text-3xl text-amber-500/30 dark:text-amber-400/25 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(251,191,36,0.8)]"
               >
-                {glyph.char}
+                {char}
               </span>
-
-              {/* Tooltip on hover */}
-              <div className="absolute right-full mr-3 px-2 py-1 rounded bg-slate-900/90 dark:bg-slate-800/95 border border-amber-500/30 text-[11px] font-mono2 text-amber-300 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg z-50">
-                <span className="font-semibold">{glyph.name}</span> · {glyph.meaning}
-              </div>
             </motion.div>
           ))}
         </motion.div>
