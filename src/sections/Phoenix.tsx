@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Eye, Navigation, ShieldCheck, Cpu, Radio, MonitorSmartphone, Sparkles } from "lucide-react";
+import { Github, Eye, Navigation, ShieldCheck, Cpu, Radio, MonitorSmartphone } from "lucide-react";
 import { phoenix } from "@/data/content";
 import { PhoenixFlameLogo } from "@/components/PhoenixFlameLogo";
 
@@ -23,10 +23,6 @@ export function Phoenix() {
           {/* Animated Phoenix Logo with Fire & Ember Particles */}
           <div className="mb-4 relative flex flex-col items-center">
             <PhoenixFlameLogo size="lg" interactive={true} showParticles={true} />
-            <div className="mt-1 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono2 text-amber-700 dark:text-amber-300 bg-amber-500/10 border border-amber-500/25 shadow-lg shadow-orange-500/5 backdrop-blur-sm">
-              <Sparkles size={12} className="text-amber-500 dark:text-amber-400 animate-pulse" />
-              Hover to ignite flame & sparks
-            </div>
           </div>
 
           <p className="font-mono2 text-sm text-amber-600 dark:text-amber-400 tracking-widest uppercase mb-3">// Graduation project</p>
