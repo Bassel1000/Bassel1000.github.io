@@ -48,8 +48,6 @@ export function HieroglyphicSideRails() {
     >
       {/* LEFT RAIL */}
       <div className="absolute left-4 2xl:left-8 top-0 bottom-0 w-10 flex flex-col items-center justify-center">
-        {/* Subtle Vertical Golden Rail Line */}
-        <div className="absolute top-12 bottom-12 w-px bg-gradient-to-b from-transparent via-amber-500/20 to-transparent" />
 
         <motion.div
           style={{ y: yLeft }}
@@ -86,8 +84,6 @@ export function HieroglyphicSideRails() {
 
       {/* RIGHT RAIL */}
       <div className="absolute right-4 2xl:right-8 top-0 bottom-0 w-10 flex flex-col items-center justify-center">
-        {/* Subtle Vertical Golden Rail Line */}
-        <div className="absolute top-12 bottom-12 w-px bg-gradient-to-b from-transparent via-amber-500/20 to-transparent" />
 
         <motion.div
           style={{ y: yRight }}
