@@ -3,11 +3,11 @@ import { ArrowUpRight, Github, Star } from "lucide-react";
 import { projects, moreProjects, links } from "@/data/content";
 
 const categoryColors: Record<string, string> = {
-  "Machine Learning": "text-cyan-300 bg-cyan-500/10 border-cyan-500/25",
-  Hardware: "text-orange-300 bg-orange-500/10 border-orange-500/25",
-  "Data Engineering": "text-violet-300 bg-violet-500/10 border-violet-500/25",
-  Systems: "text-emerald-300 bg-emerald-500/10 border-emerald-500/25",
-  Software: "text-sky-300 bg-sky-500/10 border-sky-500/25",
+  "Machine Learning": "text-cyan-700 bg-cyan-500/10 border-cyan-500/30 dark:text-cyan-300 dark:bg-cyan-500/10 dark:border-cyan-500/25",
+  Hardware: "text-orange-700 bg-orange-500/10 border-orange-500/30 dark:text-orange-300 dark:bg-orange-500/10 dark:border-orange-500/25",
+  "Data Engineering": "text-violet-700 bg-violet-500/10 border-violet-500/30 dark:text-violet-300 dark:bg-violet-500/10 dark:border-violet-500/25",
+  Systems: "text-emerald-700 bg-emerald-500/10 border-emerald-500/30 dark:text-emerald-300 dark:bg-emerald-500/10 dark:border-emerald-500/25",
+  Software: "text-sky-700 bg-sky-500/10 border-sky-500/30 dark:text-sky-300 dark:bg-sky-500/10 dark:border-sky-500/25",
 };
 
 export function Projects() {
@@ -21,11 +21,11 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl"
         >
-          <p className="font-mono2 text-sm text-amber-400 tracking-widest uppercase mb-3">// Selected work</p>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-50">
+          <p className="font-mono2 text-sm text-amber-600 dark:text-amber-400 tracking-widest uppercase mb-3">// Selected work</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
             Projects that solve real problems
           </h2>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
             From post-quantum cryptography hardware to Kaggle machine learning and high-performance
             computing — every project is public on GitHub with full documentation.
           </p>
@@ -46,31 +46,31 @@ export function Projects() {
             >
               <div className="flex items-start justify-between gap-3">
                 <span
-                  className={`text-[11px] font-medium px-2.5 py-1 rounded-full border ${categoryColors[p.category]}`}
+                  className={`text-[11px] font-medium px-2.5 py-1 rounded-full border ${categoryColors[p.category] || "text-slate-700 bg-slate-100 border-slate-300 dark:text-slate-300 dark:bg-slate-800 dark:border-slate-700"}`}
                 >
                   {p.category}
                 </span>
                 <ArrowUpRight
                   size={18}
-                  className="text-slate-600 group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                  className="text-slate-400 dark:text-slate-600 group-hover:text-amber-500 dark:group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                 />
               </div>
 
-              <h3 className="mt-4 font-display text-lg font-semibold text-slate-100 group-hover:text-amber-200 transition-colors">
+              <h3 className="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-slate-100 group-hover:text-amber-600 dark:group-hover:text-amber-200 transition-colors">
                 {p.name}
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">{p.tagline}</p>
-              <p className="mt-3 text-sm text-slate-400 leading-relaxed flex-1">{p.description}</p>
+              <p className="mt-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-1">{p.description}</p>
 
               {p.highlight && (
-                <div className="mt-4 inline-flex items-center gap-1.5 text-xs text-amber-300">
-                  <Star size={13} className="fill-amber-400 text-amber-400" /> {p.highlight}
+                <div className="mt-4 inline-flex items-center gap-1.5 text-xs text-amber-600 dark:text-amber-300 font-medium">
+                  <Star size={13} className="fill-amber-500 text-amber-500 dark:fill-amber-400 dark:text-amber-400" /> {p.highlight}
                 </div>
               )}
 
-              <div className="mt-4 pt-4 border-t border-slate-800 flex flex-wrap gap-2">
+              <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
-                  <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-slate-800/80 text-slate-400">
+                  <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 border border-slate-200/60 dark:border-transparent font-medium">
                     {t}
                   </span>
                 ))}
@@ -86,7 +86,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="mt-10 card-dark rounded-2xl p-6 sm:p-8"
         >
-          <h3 className="font-display font-semibold text-slate-100">More on GitHub</h3>
+          <h3 className="font-display font-semibold text-slate-900 dark:text-slate-100">More on GitHub</h3>
           <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2.5">
             {moreProjects.map((m) => (
               <a
@@ -94,7 +94,7 @@ export function Projects() {
                 href={m.repo}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-slate-400 hover:text-amber-300 transition-colors flex items-center gap-2"
+                className="text-sm text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-300 transition-colors flex items-center gap-2"
               >
                 <span className="text-amber-500/70">▸</span> {m.name}
               </a>
@@ -104,7 +104,7 @@ export function Projects() {
             href={`${links.github}?tab=repositories`}
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 transition-colors"
           >
             <Github size={16} /> Browse all repositories
           </a>

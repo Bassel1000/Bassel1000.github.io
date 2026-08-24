@@ -14,8 +14,8 @@ export function Credentials() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl"
         >
-          <p className="font-mono2 text-sm text-amber-400 tracking-widest uppercase mb-3">// Credentials</p>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-50">
+          <p className="font-mono2 text-sm text-amber-600 dark:text-amber-400 tracking-widest uppercase mb-3">// Credentials</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
             Education, skills & certifications
           </h2>
         </motion.div>
@@ -32,21 +32,21 @@ export function Credentials() {
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-amber-500/10 blur-2xl" />
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-orange-600/20 border border-amber-500/25 flex items-center justify-center">
-                <GraduationCap size={19} className="text-amber-400" />
+                <GraduationCap size={19} className="text-amber-500 dark:text-amber-400" />
               </div>
-              <h3 className="font-display font-semibold text-slate-100">Education</h3>
+              <h3 className="font-display font-semibold text-slate-900 dark:text-slate-100">Education</h3>
             </div>
-            <div className="font-display text-xl font-semibold text-slate-50">{education.degree}</div>
-            <div className="mt-1 text-slate-300">{education.school}</div>
-            <div className="mt-1 text-sm text-amber-300 font-medium">{education.detail}</div>
+            <div className="font-display text-xl font-semibold text-slate-900 dark:text-slate-50">{education.degree}</div>
+            <div className="mt-1 text-slate-700 dark:text-slate-300 font-medium">{education.school}</div>
+            <div className="mt-1 text-sm text-amber-600 dark:text-amber-300 font-semibold">{education.detail}</div>
             <div className="mt-1 text-sm text-slate-500">{education.location}</div>
 
-            <div className="mt-6 pt-5 border-t border-slate-800">
-              <div className="text-xs uppercase tracking-wider text-slate-500 mb-3">Specializations</div>
+            <div className="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800">
+              <div className="text-xs uppercase tracking-wider text-slate-500 mb-3 font-semibold">Specializations</div>
               <div className="space-y-3">
                 {specializations.map((s) => (
                   <div key={s.name}>
-                    <div className="text-sm font-medium text-slate-200">{s.name}</div>
+                    <div className="text-sm font-semibold text-slate-900 dark:text-slate-200">{s.name}</div>
                     <div className="text-xs text-slate-500">
                       {s.issuer} — {s.detail}
                     </div>
@@ -66,19 +66,19 @@ export function Credentials() {
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/15 to-cyan-600/15 border border-cyan-500/25 flex items-center justify-center">
-                <Wrench size={18} className="text-cyan-300" />
+                <Wrench size={18} className="text-cyan-600 dark:text-cyan-300" />
               </div>
-              <h3 className="font-display font-semibold text-slate-100">Technical skills</h3>
+              <h3 className="font-display font-semibold text-slate-900 dark:text-slate-100">Technical skills</h3>
             </div>
             <div className="space-y-5">
               {skillGroups.map((g) => (
                 <div key={g.title}>
-                  <div className="text-xs uppercase tracking-wider text-slate-500 mb-2">{g.title}</div>
+                  <div className="text-xs uppercase tracking-wider text-slate-500 mb-2 font-semibold">{g.title}</div>
                   <div className="flex flex-wrap gap-2">
                     {g.skills.map((s) => (
                       <span
                         key={s}
-                        className="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/60 text-slate-300"
+                        className="text-xs px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 font-medium"
                       >
                         {s}
                       </span>
@@ -101,10 +101,10 @@ export function Credentials() {
           <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-orange-600/20 border border-amber-500/25 flex items-center justify-center">
-                <BadgeCheck size={19} className="text-amber-400" />
+                <BadgeCheck size={19} className="text-amber-500 dark:text-amber-400" />
               </div>
               <div>
-                <h3 className="font-display font-semibold text-slate-100">Certifications</h3>
+                <h3 className="font-display font-semibold text-slate-900 dark:text-slate-100">Certifications</h3>
                 <p className="text-xs text-slate-500">A selection — 25+ in total, verified on Credly & LinkedIn</p>
               </div>
             </div>
@@ -113,7 +113,7 @@ export function Credentials() {
                 href={links.credly}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 transition-colors"
               >
                 <CredlyIcon size={15} />
                 <span>Credly</span>
@@ -123,7 +123,7 @@ export function Credentials() {
                 href={links.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 transition-colors"
               >
                 <Linkedin size={15} />
                 <span>LinkedIn</span>
@@ -135,9 +135,9 @@ export function Credentials() {
             {certifications.map((c) => (
               <div
                 key={c.name}
-                className="rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-3 hover:border-amber-500/30 transition-colors"
+                className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white/70 dark:bg-slate-900/40 px-4 py-3 hover:border-amber-500/40 transition-colors shadow-sm dark:shadow-none"
               >
-                <div className="text-sm font-medium text-slate-200 leading-snug">{c.name}</div>
+                <div className="text-sm font-semibold text-slate-900 dark:text-slate-200 leading-snug">{c.name}</div>
                 <div className="mt-1 text-xs text-slate-500">
                   {c.issuer} · {c.date}
                 </div>
@@ -156,8 +156,8 @@ export function Credentials() {
         >
           {training.map((t) => (
             <div key={t.name} className="card-dark card-dark-hover rounded-2xl px-5 py-4">
-              <div className="text-sm font-semibold text-slate-200">{t.name}</div>
-              <div className="mt-1 text-xs text-slate-500 leading-relaxed">{t.detail}</div>
+              <div className="text-sm font-semibold text-slate-900 dark:text-slate-200">{t.name}</div>
+              <div className="mt-1 text-xs text-slate-600 dark:text-slate-500 leading-relaxed">{t.detail}</div>
             </div>
           ))}
         </motion.div>

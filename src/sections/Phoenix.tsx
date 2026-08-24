@@ -9,8 +9,8 @@ export function Phoenix() {
   return (
     <section id="phoenix" className="relative py-24 sm:py-32 overflow-hidden">
       {/* ambient fire glow */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[70rem] h-[32rem] bg-gradient-to-b from-orange-600/15 via-amber-500/10 to-transparent blur-3xl animate-flame-pulse" />
-      <div className="pointer-events-none absolute top-36 left-1/2 -translate-x-1/2 w-[45rem] h-[22rem] bg-gradient-to-r from-orange-500/10 via-red-500/10 to-amber-500/10 blur-2xl" />
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[70rem] h-[32rem] bg-gradient-to-b from-orange-500/10 dark:from-orange-600/15 via-amber-500/10 to-transparent blur-3xl animate-flame-pulse" />
+      <div className="pointer-events-none absolute top-36 left-1/2 -translate-x-1/2 w-[45rem] h-[22rem] bg-gradient-to-r from-orange-500/10 via-red-500/5 dark:via-red-500/10 to-amber-500/10 blur-2xl" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <motion.div
@@ -23,25 +23,25 @@ export function Phoenix() {
           {/* Animated Phoenix Logo with Fire & Ember Particles */}
           <div className="mb-4 relative flex flex-col items-center">
             <PhoenixFlameLogo size="lg" interactive={true} showParticles={true} />
-            <div className="mt-1 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono2 text-amber-300 bg-amber-500/10 border border-amber-500/25 shadow-lg shadow-orange-500/5 backdrop-blur-sm">
-              <Sparkles size={12} className="text-amber-400 animate-pulse" />
+            <div className="mt-1 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono2 text-amber-700 dark:text-amber-300 bg-amber-500/10 border border-amber-500/25 shadow-lg shadow-orange-500/5 backdrop-blur-sm">
+              <Sparkles size={12} className="text-amber-500 dark:text-amber-400 animate-pulse" />
               Hover to ignite flame & sparks
             </div>
           </div>
 
-          <p className="font-mono2 text-sm text-amber-400 tracking-widest uppercase mb-3">// Graduation project</p>
+          <p className="font-mono2 text-sm text-amber-600 dark:text-amber-400 tracking-widest uppercase mb-3">// Graduation project</p>
           <div className="flex items-center justify-center gap-3">
-            <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-slate-50">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
               Meet <span className="text-gradient">Phoenix</span>
             </h2>
           </div>
-          <p className="mt-3 text-lg text-slate-300 font-medium">{phoenix.title}</p>
-          <p className="mt-4 text-slate-400 leading-relaxed">{phoenix.description}</p>
+          <p className="mt-3 text-lg text-slate-700 dark:text-slate-300 font-medium">{phoenix.title}</p>
+          <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">{phoenix.description}</p>
           <a
             href={phoenix.repo}
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-700 text-sm font-medium text-slate-200 hover:border-amber-500/50 hover:text-amber-300 transition-colors"
+            className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-amber-500/50 hover:text-amber-600 dark:hover:text-amber-300 transition-colors bg-white/60 dark:bg-transparent shadow-sm dark:shadow-none"
           >
             <Github size={16} /> Explore the repository
           </a>
@@ -58,7 +58,7 @@ export function Phoenix() {
           {phoenix.stats.map((s) => (
             <div key={s.label} className="card-dark rounded-2xl px-5 py-6 text-center">
               <div className="font-display text-3xl sm:text-4xl font-bold text-gradient">{s.value}</div>
-              <div className="mt-2 text-xs sm:text-sm text-slate-400">{s.label}</div>
+              <div className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">{s.label}</div>
             </div>
           ))}
         </motion.div>
@@ -71,13 +71,13 @@ export function Phoenix() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-14"
         >
-          <h3 className="font-display text-xl font-semibold text-slate-100 mb-6 text-center">How a mission works</h3>
+          <h3 className="font-display text-xl font-semibold text-slate-900 dark:text-slate-100 mb-6 text-center">How a mission works</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {phoenix.mission.map((m, i) => (
               <div key={m.step} className="relative card-dark card-dark-hover rounded-2xl p-5">
-                <div className="font-mono2 text-amber-500/70 text-sm">{m.step}</div>
-                <div className="mt-2 font-display font-semibold text-slate-100">{m.title}</div>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{m.text}</p>
+                <div className="font-mono2 text-amber-600 dark:text-amber-500/70 text-sm font-semibold">{m.step}</div>
+                <div className="mt-2 font-display font-semibold text-slate-900 dark:text-slate-100">{m.title}</div>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{m.text}</p>
                 {i < phoenix.mission.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-3.5 text-amber-500/60 text-lg">→</div>
                 )}
@@ -100,10 +100,10 @@ export function Phoenix() {
                 className="card-dark card-dark-hover rounded-2xl p-6"
               >
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-orange-600/20 border border-amber-500/25 flex items-center justify-center mb-4">
-                  <Icon size={19} className="text-amber-400" />
+                  <Icon size={19} className="text-amber-500 dark:text-amber-400" />
                 </div>
-                <h4 className="font-display font-semibold text-slate-100">{h.title}</h4>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{h.text}</p>
+                <h4 className="font-display font-semibold text-slate-900 dark:text-slate-100">{h.title}</h4>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{h.text}</p>
               </motion.div>
             );
           })}
@@ -120,7 +120,7 @@ export function Phoenix() {
           {phoenix.stack.map((t) => (
             <span
               key={t}
-              className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-800/70 border border-slate-700/70 text-slate-300"
+              className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/70 text-slate-700 dark:text-slate-300 shadow-sm dark:shadow-none"
             >
               {t}
             </span>

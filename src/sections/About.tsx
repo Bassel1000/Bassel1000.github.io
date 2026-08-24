@@ -26,31 +26,31 @@ export function About() {
             <img
               src={aboutImg}
               alt="Bassel Elbahnasy at KSIU"
-              className="relative w-full max-w-md mx-auto rounded-[1.75rem] border border-slate-700/60 object-cover h-[520px] object-top shadow-2xl shadow-black/50"
+              className="relative w-full max-w-md mx-auto rounded-[1.75rem] border border-slate-200/80 dark:border-slate-700/60 object-cover h-[520px] object-top shadow-2xl shadow-slate-300/40 dark:shadow-black/50"
             />
           </div>
 
           <div className="order-1 lg:order-2">
-            <p className="font-mono2 text-sm text-amber-400 tracking-widest uppercase mb-3">// About me</p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-50">
+            <p className="font-mono2 text-sm text-amber-600 dark:text-amber-400 tracking-widest uppercase mb-3">// About me</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
               The future is data-driven.
               <br />
-              <span className="text-slate-400">I'm building it.</span>
+              <span className="text-slate-500 dark:text-slate-400">I'm building it.</span>
             </h2>
 
-            <div className="mt-6 space-y-4 text-slate-400 leading-relaxed">
+            <div className="mt-6 space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
               <p>
                 I'm a Computer Engineering student at{" "}
-                <span className="text-slate-200 font-medium">King Salman International University</span>,
+                <span className="text-slate-900 dark:text-slate-200 font-medium">King Salman International University</span>,
                 graduating in 2026, working across data science, robotics, and cybersecurity.
                 I'm driven by a simple habit: find a hard problem, learn the tools, and build something
                 that makes the process smarter.
               </p>
               <p>
-                As a <span className="text-slate-200 font-medium">Google-certified Data Analyst</span> and{" "}
-                <span className="text-slate-200 font-medium">Microsoft-track Data Engineer</span>, I turn raw
+                As a <span className="text-slate-900 dark:text-slate-200 font-medium">Google-certified Data Analyst</span> and{" "}
+                <span className="text-slate-900 dark:text-slate-200 font-medium">Microsoft-track Data Engineer</span>, I turn raw
                 data into actionable insight with SQL, Python, R, Tableau, and Azure. On the hardware side, my
-                graduation project <a href="#phoenix" className="text-amber-400 hover:text-amber-300 underline decoration-amber-500/40 underline-offset-4">Phoenix</a> —
+                graduation project <a href="#phoenix" className="text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 underline decoration-amber-500/40 underline-offset-4 font-medium transition-colors">Phoenix</a> —
                 an autonomous fire-detection and suppression robot — brought together ROS 2, computer vision,
                 and embedded systems into one real, working machine.
               </p>
@@ -64,16 +64,16 @@ export function About() {
             <div className="mt-8 grid sm:grid-cols-2 gap-3">
               {facts.map((f) => (
                 <div key={f.label} className="card-dark rounded-xl px-4 py-3.5 flex items-center gap-3">
-                  <f.icon size={18} className="text-amber-400 shrink-0" />
+                  <f.icon size={18} className="text-amber-500 dark:text-amber-400 shrink-0" />
                   <div>
-                    <div className="text-[11px] uppercase tracking-wider text-slate-500">{f.label}</div>
-                    <div className="text-sm text-slate-200 font-medium">{f.value}</div>
+                    <div className="text-[11px] uppercase tracking-wider text-slate-500 font-medium">{f.label}</div>
+                    <div className="text-sm text-slate-900 dark:text-slate-200 font-semibold">{f.value}</div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="mt-6 text-xs text-slate-500">
+            <p className="mt-6 text-xs text-slate-500 font-medium">
               {education.degree} · {education.school} · {education.detail}
             </p>
           </div>

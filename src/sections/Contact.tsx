@@ -5,11 +5,11 @@ import { links, emails } from "@/data/content";
 import { KaggleIcon, CredlyIcon, UpworkIcon } from "@/components/BrandIcons";
 
 const profiles: { name: string; handle: string; href: string; icon: ComponentType<{ size?: number }>; color: string }[] = [
-  { name: "GitHub", handle: "@Bassel1000", href: links.github, icon: Github, color: "hover:border-slate-400/50" },
-  { name: "LinkedIn", handle: "bassel-elbahnasy", href: links.linkedin, icon: Linkedin, color: "hover:border-sky-400/50" },
-  { name: "Kaggle", handle: "basselashraf", href: links.kaggle, icon: KaggleIcon, color: "hover:border-cyan-400/50" },
-  { name: "Credly", handle: "bassel-el-bahnasy", href: links.credly, icon: CredlyIcon, color: "hover:border-orange-400/50" },
-  { name: "Upwork", handle: "Freelance services", href: links.upwork, icon: UpworkIcon, color: "hover:border-emerald-400/50" },
+  { name: "GitHub", handle: "@Bassel1000", href: links.github, icon: Github, color: "hover:border-slate-400/70" },
+  { name: "LinkedIn", handle: "bassel-elbahnasy", href: links.linkedin, icon: Linkedin, color: "hover:border-sky-500/70" },
+  { name: "Kaggle", handle: "basselashraf", href: links.kaggle, icon: KaggleIcon, color: "hover:border-cyan-500/70" },
+  { name: "Credly", handle: "bassel-el-bahnasy", href: links.credly, icon: CredlyIcon, color: "hover:border-orange-500/70" },
+  { name: "Upwork", handle: "Freelance services", href: links.upwork, icon: UpworkIcon, color: "hover:border-emerald-500/70" },
 ];
 
 export function Contact() {
@@ -23,7 +23,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative py-24 sm:py-32 overflow-hidden">
-      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[70rem] h-[20rem] bg-gradient-to-t from-orange-600/10 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[70rem] h-[20rem] bg-gradient-to-t from-orange-500/10 dark:from-orange-600/10 to-transparent blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <motion.div
@@ -33,13 +33,13 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto"
         >
-          <p className="font-mono2 text-sm text-amber-400 tracking-widest uppercase mb-3">// Get in touch</p>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-slate-50">
+          <p className="font-mono2 text-sm text-amber-600 dark:text-amber-400 tracking-widest uppercase mb-3">// Get in touch</p>
+          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
             The future is data-driven.
             <br />
             <span className="text-gradient">And it starts today.</span>
           </h2>
-          <p className="mt-5 text-slate-400 leading-relaxed">
+          <p className="mt-5 text-slate-600 dark:text-slate-400 leading-relaxed">
             Whether it's a data project, an ML problem, a robotics build, or a freelance engagement —
             my inbox is open. I usually reply within a day.
           </p>
@@ -57,14 +57,14 @@ export function Contact() {
             <div
               key={e.address}
               className={`card-dark rounded-xl px-5 py-3.5 flex items-center justify-between gap-3 ${
-                e.primary ? "border-amber-500/40" : ""
+                e.primary ? "border-amber-500/50 dark:border-amber-500/40 shadow-md shadow-amber-500/5" : ""
               }`}
             >
               <div className="flex items-center gap-3 min-w-0">
-                <Mail size={17} className={e.primary ? "text-amber-400" : "text-slate-500"} />
-                <span className="text-sm text-slate-200 truncate">{e.address}</span>
+                <Mail size={17} className={e.primary ? "text-amber-500 dark:text-amber-400" : "text-slate-400 dark:text-slate-500"} />
+                <span className="text-sm font-medium text-slate-800 dark:text-slate-200 truncate">{e.address}</span>
                 {e.primary && (
-                  <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 shrink-0">
+                  <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/30 shrink-0">
                     Primary
                   </span>
                 )}
@@ -72,14 +72,14 @@ export function Contact() {
               <div className="flex items-center gap-2 shrink-0">
                 <button
                   onClick={() => copy(e.address)}
-                  className="p-1.5 rounded-lg text-slate-500 hover:text-amber-300 hover:bg-slate-800/70 transition-colors"
+                  className="p-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-300 hover:bg-slate-200/70 dark:hover:bg-slate-800/70 transition-colors"
                   aria-label={`Copy ${e.address}`}
                 >
-                  {copied === e.address ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
+                  {copied === e.address ? <Check size={15} className="text-emerald-500 dark:text-emerald-400" /> : <Copy size={15} />}
                 </button>
                 <a
                   href={`mailto:${e.address}`}
-                  className="p-1.5 rounded-lg text-slate-500 hover:text-amber-300 hover:bg-slate-800/70 transition-colors"
+                  className="p-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-300 hover:bg-slate-200/70 dark:hover:bg-slate-800/70 transition-colors"
                   aria-label={`Email ${e.address}`}
                 >
                   <ArrowUpRight size={15} />
@@ -103,26 +103,26 @@ export function Contact() {
               href={p.href}
               target="_blank"
               rel="noreferrer"
-              className={`card-dark rounded-xl px-4 py-5 text-center transition-colors border border-slate-800 ${p.color} group`}
+              className={`card-dark card-dark-hover rounded-xl px-4 py-5 text-center transition-all border border-slate-200/90 dark:border-slate-800 ${p.color} group`}
             >
-              <div className="w-10 h-10 mx-auto rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-300 group-hover:text-amber-300 transition-colors">
+              <div className="w-10 h-10 mx-auto rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors shadow-sm dark:shadow-none">
                 <p.icon size={18} />
               </div>
-              <div className="mt-3 text-sm font-semibold text-slate-100">{p.name}</div>
-              <div className="mt-0.5 text-[11px] text-slate-500 truncate">{p.handle}</div>
+              <div className="mt-3 text-sm font-semibold text-slate-900 dark:text-slate-100">{p.name}</div>
+              <div className="mt-0.5 text-[11px] text-slate-500 truncate font-medium">{p.handle}</div>
             </a>
           ))}
         </motion.div>
       </div>
 
       {/* footer */}
-      <footer className="relative mt-20 border-t border-slate-800/70">
+      <footer className="relative mt-20 border-t border-slate-200 dark:border-slate-800/70">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <span className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center font-display font-bold text-slate-950 text-xs">
+            <span className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center font-display font-bold text-slate-950 text-xs shadow-sm">
               BE
             </span>
-            <span className="text-sm text-slate-400">
+            <span className="text-sm text-slate-500 dark:text-slate-400 font-medium">
               © {new Date().getFullYear()} Bassel Elbahnasy · Built with React & Tailwind
             </span>
           </div>
@@ -141,7 +141,7 @@ export function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={item.label}
-                className="p-2 rounded-full text-slate-500 hover:text-amber-300 hover:bg-slate-800/60 transition-colors"
+                className="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-300 hover:bg-slate-200/70 dark:hover:bg-slate-800/60 transition-colors"
               >
                 <item.icon size={17} />
               </a>
