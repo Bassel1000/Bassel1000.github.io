@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { GraduationCap, BadgeCheck, Wrench, ArrowUpRight } from "lucide-react";
+import { GraduationCap, BadgeCheck, Wrench, ArrowUpRight, Linkedin } from "lucide-react";
 import { education, specializations, certifications, training, skillGroups, links } from "@/data/content";
+import { CredlyIcon } from "@/components/BrandIcons";
 
 export function Credentials() {
   return (
@@ -112,17 +113,21 @@ export function Credentials() {
                 href={links.credly}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
               >
-                Credly <ArrowUpRight size={15} />
+                <CredlyIcon size={15} />
+                <span>Credly</span>
+                <ArrowUpRight size={15} />
               </a>
               <a
                 href={links.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
               >
-                LinkedIn <ArrowUpRight size={15} />
+                <Linkedin size={15} />
+                <span>LinkedIn</span>
+                <ArrowUpRight size={15} />
               </a>
             </div>
           </div>

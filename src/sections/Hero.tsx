@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, GraduationCap } from "lucide-react";
 import { links } from "@/data/content";
+import { KaggleIcon, CredlyIcon, UpworkIcon } from "@/components/BrandIcons";
 import heroImg from "@/assets/hero.webp";
 
 const socials = [
   { icon: Github, href: links.github, label: "GitHub" },
   { icon: Linkedin, href: links.linkedin, label: "LinkedIn" },
+  { icon: KaggleIcon, href: links.kaggle, label: "Kaggle" },
+  { icon: CredlyIcon, href: links.credly, label: "Credly" },
+  { icon: UpworkIcon, href: links.upwork, label: "Upwork" },
   { icon: Mail, href: "mailto:basselashraftmd@gmail.com", label: "Email" },
 ];
 

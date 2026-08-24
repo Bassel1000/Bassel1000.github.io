@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Copy, Check, ArrowUpRight } from "lucide-react";
 import { useState, type ComponentType } from "react";
 import { links, emails } from "@/data/content";
+import { KaggleIcon, CredlyIcon, UpworkIcon } from "@/components/BrandIcons";
 
 const profiles: { name: string; handle: string; href: string; icon: ComponentType<{ size?: number }>; color: string }[] = [
   { name: "GitHub", handle: "@Bassel1000", href: links.github, icon: Github, color: "hover:border-slate-400/50" },
   { name: "LinkedIn", handle: "bassel-elbahnasy", href: links.linkedin, icon: Linkedin, color: "hover:border-sky-400/50" },
-  { name: "Kaggle", handle: "basselashraf", href: links.kaggle, icon: () => <span className="font-display font-bold text-sm">K</span>, color: "hover:border-cyan-400/50" },
-  { name: "Credly", handle: "bassel-el-bahnasy", href: links.credly, icon: () => <span className="font-display font-bold text-sm">C</span>, color: "hover:border-orange-400/50" },
-  { name: "Upwork", handle: "Freelance services", href: links.upwork, icon: () => <span className="font-display font-bold text-sm">U</span>, color: "hover:border-emerald-400/50" },
+  { name: "Kaggle", handle: "basselashraf", href: links.kaggle, icon: KaggleIcon, color: "hover:border-cyan-400/50" },
+  { name: "Credly", handle: "bassel-el-bahnasy", href: links.credly, icon: CredlyIcon, color: "hover:border-orange-400/50" },
+  { name: "Upwork", handle: "Freelance services", href: links.upwork, icon: UpworkIcon, color: "hover:border-emerald-400/50" },
 ];
 
 export function Contact() {
@@ -126,15 +127,23 @@ export function Contact() {
             </span>
           </div>
           <div className="flex items-center gap-1">
-            {[Github, Linkedin, Mail].map((Icon, i) => (
+            {[
+              { icon: Github, href: links.github, label: "GitHub" },
+              { icon: Linkedin, href: links.linkedin, label: "LinkedIn" },
+              { icon: KaggleIcon, href: links.kaggle, label: "Kaggle" },
+              { icon: CredlyIcon, href: links.credly, label: "Credly" },
+              { icon: UpworkIcon, href: links.upwork, label: "Upwork" },
+              { icon: Mail, href: "mailto:basselashraftmd@gmail.com", label: "Email" },
+            ].map((item) => (
               <a
-                key={i}
-                href={[links.github, links.linkedin, "mailto:basselashraftmd@gmail.com"][i]}
+                key={item.label}
+                href={item.href}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={item.label}
                 className="p-2 rounded-full text-slate-500 hover:text-amber-300 hover:bg-slate-800/60 transition-colors"
               >
-                <Icon size={17} />
+                <item.icon size={17} />
               </a>
             ))}
           </div>
