@@ -8,12 +8,12 @@ import {
   Droplets,
   MonitorSmartphone,
   Play,
-  Sparkles,
+  Layers,
 } from "lucide-react";
 import { phoenix } from "@/data/content";
 import { PhoenixFlameLogo } from "@/components/PhoenixFlameLogo";
 import { PhoenixVideoShowcase } from "@/components/PhoenixVideoShowcase";
-import { PhoenixDynamicsGraph } from "@/components/PhoenixDynamicsGraph";
+import { PhoenixSystemArchitecture } from "@/components/PhoenixSystemArchitecture";
 
 const highlightIcons = [Flame, ShieldAlert, Navigation, Cpu, Droplets, MonitorSmartphone];
 
@@ -72,10 +72,10 @@ export function Phoenix() {
             </a>
 
             <a
-              href="#phoenix-dynamics"
+              href="#phoenix-architecture"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-sm font-medium text-amber-600 dark:text-amber-300 hover:bg-amber-500/20 transition-colors"
             >
-              <Sparkles size={15} /> System Dynamics & Telemetry
+              <Layers size={15} /> System Architecture
             </a>
           </div>
         </motion.div>
@@ -91,15 +91,15 @@ export function Phoenix() {
           <PhoenixVideoShowcase />
         </motion.div>
 
-        {/* Dynamic Graphic Graphs Section (Kinematics, 3-Node Topology, 2-DOF Standoff Radar) */}
+        {/* System Architecture & Hardware Anatomy Section */}
         <motion.div
-          id="phoenix-dynamics"
+          id="phoenix-architecture"
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <PhoenixDynamicsGraph />
+          <PhoenixSystemArchitecture />
         </motion.div>
 
         {/* Key System Statistics */}

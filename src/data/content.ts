@@ -30,14 +30,6 @@ export const phoenix = {
     { value: "94%+", label: "Neural Casualty Assessment" },
     { value: "0 ms", label: "Offline Local Mosquitto Latency" },
   ],
-  videoChapters: [
-    { time: 0, tag: "0:00", title: "Datacenter Patrol", desc: "Autonomous Nav2 cold-aisle traversal at 0.35 m/s" },
-    { time: 8, tag: "0:08", title: "Casualty Detection", desc: "Neural recognition flags fallen technician (94% confidence)" },
-    { time: 17, tag: "0:17", title: "Obstacle Avoidance", desc: "Dynamic costmap replanning around crash cart obstruction" },
-    { time: 26, tag: "0:26", title: "Precision Suppression", desc: "30cm thermal standoff lock & 24V pump water jet" },
-    { time: 34, tag: "0:34", title: "Warehouse Logistics", desc: "RF2O laser odometry overcoming skid-steer wheel slip" },
-    { time: 43, tag: "0:43", title: "Cybernetic HUD", desc: "Zero-latency WebSockets telemetry & mission clear confirmation" },
-  ],
   highlights: [
     {
       title: "AI Fire & Flame Perception",
