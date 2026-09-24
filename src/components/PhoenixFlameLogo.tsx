@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import phoenixFireImg from "@/assets/phoenix_logo_fire.png";
+import phoenixFireImg from "@/assets/phoenix_logo_fire.svg";
 
 interface PhoenixFlameLogoProps {
   size?: "sm" | "md" | "lg" | "xl";
