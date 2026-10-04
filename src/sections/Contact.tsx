@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Copy, Check, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, Copy, Check, ArrowUpRight, Download } from "lucide-react";
 import { useState, type ComponentType } from "react";
-import { links, emails } from "@/data/content";
+import { links, emails, cv } from "@/data/content";
 import { KaggleIcon, CredlyIcon, UpworkIcon } from "@/components/BrandIcons";
 
 const profiles: { name: string; handle: string; href: string; icon: ComponentType<{ size?: number }>; color: string }[] = [
@@ -87,6 +87,27 @@ export function Contact() {
               </div>
             </div>
           ))}
+        </motion.div>
+
+        {/* CV download */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.55, delay: 0.05 }}
+          className="mt-10 flex flex-col items-center gap-3"
+        >
+          <a
+            href={cv.href}
+            download={cv.fileName}
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-400 to-orange-600 text-slate-950 font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-orange-600/20"
+          >
+            <Download size={17} />
+            Download my CV
+          </a>
+          <p className="text-xs text-slate-500 dark:text-slate-500 font-medium tracking-wide">
+            {cv.detail}
+          </p>
         </motion.div>
 
         {/* profiles */}

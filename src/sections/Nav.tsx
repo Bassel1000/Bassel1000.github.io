@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { links } from "@/data/content";
+import { Menu, X, Download } from "lucide-react";
+import { links, cv } from "@/data/content";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
@@ -92,7 +92,7 @@ export function Nav() {
         </a>
 
         {/* Desktop Nav Items */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-5">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -109,6 +109,16 @@ export function Nav() {
               {item.label}
             </a>
           ))}
+
+          <a
+            href={cv.href}
+            download={cv.fileName}
+            title={cv.label}
+            className="text-sm text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-300 transition-colors inline-flex items-center gap-1.5"
+          >
+            <Download size={15} />
+            CV
+          </a>
 
           <a
             href={links.upwork}
@@ -148,6 +158,15 @@ export function Nav() {
               {item.label}
             </a>
           ))}
+          <a
+            href={cv.href}
+            download={cv.fileName}
+            onClick={() => setOpen(false)}
+            className="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-300 transition-colors inline-flex items-center gap-2"
+          >
+            <Download size={15} />
+            {cv.label} (PDF)
+          </a>
           <a
             href={links.upwork}
             target="_blank"

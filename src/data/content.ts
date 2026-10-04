@@ -6,6 +6,19 @@ export const links = {
   upwork: "https://www.upwork.com/freelancers/~0122a3fbdc5d874f7d",
 };
 
+/**
+ * Downloadable CV / résumé.
+ * The file itself lives at `public/Bassel_Elbahnasy_CV.pdf`, so it is deployed
+ * verbatim to the site root by Vite (and by the GitHub Pages workflow).
+ * To publish an updated CV, replace that PDF — no code change needed.
+ */
+export const cv = {
+  href: "/Bassel_Elbahnasy_CV.pdf",
+  fileName: "Bassel_Elbahnasy_CV.pdf",
+  label: "Download CV",
+  detail: "PDF · 302 KB",
+};
+
 export const emails = [
   { address: "basselashraftmd@gmail.com", primary: true },
   { address: "basselelbahnasy@outlook.com", primary: false },

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, GraduationCap } from "lucide-react";
-import { links } from "@/data/content";
+import { ArrowDown, Download, Github, Linkedin, Mail, GraduationCap } from "lucide-react";
+import { links, cv } from "@/data/content";
 import { KaggleIcon, CredlyIcon, UpworkIcon } from "@/components/BrandIcons";
 import heroImg from "@/assets/hero.webp";
 
@@ -58,6 +58,14 @@ export function Hero() {
               className="px-6 py-3 rounded-full bg-gradient-to-r from-amber-400 to-orange-600 text-slate-950 font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-orange-600/20"
             >
               View my work
+            </a>
+            <a
+              href={cv.href}
+              download={cv.fileName}
+              className="px-6 py-3 rounded-full border border-amber-500/50 dark:border-amber-500/40 text-amber-700 dark:text-amber-300 font-semibold text-sm hover:bg-amber-500/10 dark:hover:bg-amber-500/10 transition-colors bg-white/60 dark:bg-transparent shadow-sm dark:shadow-none inline-flex items-center gap-2"
+            >
+              <Download size={16} />
+              {cv.label}
             </a>
             <a
               href={links.upwork}
